@@ -1,17 +1,17 @@
 // TODO
-const GroceryList = () => (
-	<ul>
-		<Milk />
-		<Eggs />
-	</ul>
+const GroceryList = (props) => (
+	<div>
+		<h3>To Buy:</h3>
+		<ul>
+			<GroceryListItem item={props.groceryItems[0]}/>
+			<GroceryListItem item={props.groceryItems[1]}/>
+			<GroceryListItem item={props.groceryItems[2]}/>
+		</ul>
+	</div>
 );
 
-const Milk = () => (
-	<li>Milk</li>
+const GroceryListItem = (prop) => (
+	<li>{prop.item}</li>
 );
 
-const Eggs = () => (
-	<li>Eggs</li>
-);
-
-ReactDOM.render(<GroceryList />, document.getElementById("app"));
+ReactDOM.render(<GroceryList groceryItems={['Milk', 'Bread', 'Eggs']}/>, document.getElementById("app"));
